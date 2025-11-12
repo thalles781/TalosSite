@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lojinha do Talos</title>
+
+<!-- Fonte Boogaloo -->
+<link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    background: radial-gradient(circle at top, #1a1a1a, #000);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px 10px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #ff7b00;
+    text-shadow: 0 0 15px rgba(255,123,0,0.5);
+  }
+
+  .sistemas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .sistema {
+    background: #222;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(255,123,0,0.2);
+    transition: 0.3s;
+    border: 2px solid transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .sistema:hover {
+    transform: scale(1.03);
+    border-color: #ff7b00;
+  }
+
+  .sistema.selected {
+    border-color: #ff7b00;
+    background: #2c2c2c;
+  }
+
+  /* 🔸 Preço com Boogaloo */
+  .preco {
+    font-family: "Boogaloo", sans-serif;
+    color: #ff7b00;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .preco img {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+  }
+
+  /* 💤 Estilo dos “Em breve” */
+  .sistema.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(70%);
+  }
+
+  .sistema.disabled:hover {
+    transform: none;
+    border-color: transparent;
+  }
+
+  .btn {
+    margin-top: 30px;
+    background: #ff7b00;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(255,123,0,0.4);
+    display: none;
+  }
+
+  .btn:hover {
+    transform: scale(1.05);
+    background: #ff8c1a;
+  }
+
+  .voltar {
+    margin-top: 40px;
+    background: #555;
+    padding: 10px 18px;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .voltar:hover {
+    background: #777;
+  }
+
+  /* 🔥 Selo "NOVO" estilizado */
+  .novo-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: linear-gradient(135deg, #ff7b00, #ff1a1a);
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    text-shadow: 0 0 5px rgba(0,0,0,0.3);
+    animation: brilho 1.5s infinite alternate;
+  }
+
+  @keyframes brilho {
+    from { box-shadow: 0 0 5px #ff7b00; transform: rotate(-3deg); }
+    to { box-shadow: 0 0 15px #ff3c00; transform: rotate(3deg); }
+  }
+</style>
+</head>
+<body>
+
+  <h1>Lojinha do Talos 🛒</h1>
+
+  <div class="sistemas">
+    <!-- ✅ Sistema ativo -->
+    <div class="sistema" onclick="selecionarSistema('Sistema de CDP Funcional')">
+      ⚙️ Sistema de CDP Funcional
+      <span class="preco">20 <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Robux_2019_Logo_black.svg" alt="Robux"></span>
+      <div class="novo-badge">NOVO 🔥</div>
+    </div>
+
+    <!-- ❌ Em breve -->
+    <div class="sistema disabled">
+     Indisponível
+      <span class="preco">Em breve</span>
+    </div>
+
+    <div class="sistema disabled">
+      Indisponível
+      <span class="preco">Em breve</span>
+    </div>
+  </div>
+
+  <button id="btnInteressado" class="btn" onclick="irParaInteressado()">Estou interessado nesse!</button>
+
+  <a href="index.html" class="voltar">⬅ Voltar</a>
+
+<script>
+  let sistemaSelecionado = null;
+  function selecionarSistema(nome) {
+    const elemento = event.currentTarget;
+    if (elemento.classList.contains('disabled')) return;
+
+    document.querySelectorAll('.sistema').forEach(el => el.classList.remove('selected'));
+    elemento.classList.add('selected');
+    sistemaSelecionado = nome;
+    document.getElementById('btnInteressado').style.display = 'inline-block';
+  }
+
+  function irParaInteressado() {
+    if (sistemaSelecionado) {
+      window.location.href = `interesse.html?sistema=${encodeURIComponent(sistemaSelecionado)}`;
+    }
+  }
+</script>
+
+</body>
+</html>
