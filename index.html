@@ -5,13 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TALOS - Studio Lite</title>
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
-
+  * {margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif;}
   body {
     background: radial-gradient(circle at top, #1a1a1a, #000);
     color: white;
@@ -21,85 +15,24 @@
     min-height: 100vh;
     padding: 30px 10px;
   }
-
-  .profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
+  .profile {display: flex; flex-direction: column; align-items: center;}
   .profile img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 3px solid #ff3b3b;
-    box-shadow: 0 0 25px rgba(255, 59, 59, 0.3);
+    width: 120px; height: 120px; border-radius: 50%;
+    border: 3px solid #ff3b3b; box-shadow: 0 0 25px rgba(255,59,59,0.3);
   }
-
-  .name {
-    margin-top: 15px;
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
-  .desc {
-    margin-top: 5px;
-    color: #ccc;
-    font-size: 1rem;
-    text-align: center;
-  }
-
-  .links {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    max-width: 400px;
-  }
-
+  .name {margin-top: 15px; font-size: 1.8rem; font-weight: 700; text-transform: uppercase;}
+  .desc {margin-top: 5px; color: #ccc; font-size: 1rem; text-align: center;}
+  .links {margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; max-width: 400px;}
   .link-btn {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    background: #ff3b3b;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 12px;
-    padding: 12px 15px;
-    transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(255, 59, 59, 0.4);
+    display: flex; align-items: center; justify-content: flex-start;
+    width: 100%; background: #ff3b3b; color: white; font-weight: bold;
+    text-decoration: none; border-radius: 12px; padding: 12px 15px;
+    transition: 0.3s; box-shadow: 0 4px 15px rgba(255,59,59,0.4);
   }
-
-  .link-btn:hover {
-    transform: scale(1.05);
-    background: #ff5c5c;
-  }
-
-  .link-btn img {
-    width: 45px;
-    height: 45px;
-    border-radius: 10px;
-    margin-right: 15px;
-  }
-
-  footer {
-    margin-top: 50px;
-    font-size: 0.8rem;
-    color: #777;
-    text-align: center;
-  }
-
-  .credits {
-    margin-top: 8px;
-    font-size: 0.9rem;
-    color: #aaa;
-    text-align: center;
-  }
+  .link-btn:hover {transform: scale(1.05); background: #ff5c5c;}
+  .link-btn img {width: 45px; height: 45px; border-radius: 10px; margin-right: 15px;}
+  footer {margin-top: 50px; font-size: 0.8rem; color: #777; text-align: center;}
+  .credits {margin-top: 8px; font-size: 0.9rem; color: #aaa; text-align: center;}
 </style>
 </head>
 <body>
@@ -107,25 +40,28 @@
   <div class="profile">
     <img src="https://raw.githubusercontent.com/thalles781/TalosSite/refs/heads/main/Assets/1762210487862.jpg" alt="Talos Profile">
     <div class="name">TALOS</div>
-    <div class="desc">🇧🇷Scripts de Studio Lite! Se inscreve!️🔥</div>
+    <div class="desc">🇧🇷 Scripts de Studio Lite! Se inscreve!️🔥</div>
   </div>
 
   <div class="links">
-    <!-- BOTÃO DO CANAL -->
     <a href="https://youtube.com/@talos1234?si=wWeyRryt0fa1FDCS" target="_blank" class="link-btn">
       <img src="https://raw.githubusercontent.com/thalles781/TalosSite/refs/heads/main/Assets/1762210487862.jpg" alt="Talos Logo">
       Canal do Talos
     </a>
 
-    <!-- BOTÃO DO DISCORD -->
-    <a href="https://discord.gg/aAvBJCAMqf" target="_blank" class="link-btn" style="background: #5865F2; box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);">
+    <a href="https://discord.gg/aAvBJCAMqf" target="_blank" class="link-btn" style="background: #5865F2; box-shadow: 0 4px 15px rgba(88,101,242,0.4);">
       <img src="https://raw.githubusercontent.com/thalles781/TalosSite/refs/heads/main/Assets/3670157.png" alt="Discord Logo">
       Servidor do Discord
+    </a>
+
+    <!-- NOVO BOTÃO: LOJINHA -->
+    <a href="loja.html" class="link-btn" style="background: #ff7b00; box-shadow: 0 4px 15px rgba(255,123,0,0.4);">
+      <img src="https://raw.githubusercontent.com/thalles781/TalosSite/refs/heads/main/Assets/1883px-Robux_2019_Logo_gold.svg.png" alt="Lojinha Logo">
+      Lojinha do Talos
     </a>
   </div>
 
   <footer>Criado por Talos 😎</footer>
-
   <div class="credits">Créditos da GFX: misterycreator</div>
 
 </body>
